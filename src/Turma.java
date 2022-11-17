@@ -6,6 +6,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Turma {
     private ArrayList<Aprendiz> turma; //Criando uma lista "modular" de aprendizes para compor a turma
@@ -24,6 +25,30 @@ public class Turma {
      **/
     public int getTamanhoTurma (){
         return turma.size();
+    }
+
+    /**
+     * Preenche a turma com os aprendizes
+     **/
+    public void preencherTurma(){
+        Scanner entrada = new Scanner(System.in);
+        boolean valido;
+        String nome;
+        do {
+            System.out.println("Insira o nome do Aprendiz para ser inserido na Turma, quando estiver terminado aperte enter para finalizar.");
+            valido = true;
+            nome = entrada.nextLine();
+            if (nome.matches(".*[0-9].*")){ // Verificacao de inconsistencias no nome do aprendiz
+                valido = false;
+                System.out.println("Nome inserido é invalido.");
+            }
+            if(valido){
+                if (!nome.equals("")){ //Caso o nome seja valido e nao seja nulo ele e adicionado na lista da turma
+                    turma.add(new Aprendiz(nome));
+                }
+            }
+        } while (!nome.equals("") || !valido);
+        System.out.println("Tamanho da turma" + turma.size()); //Mostra o tamanho da turma criada
     }
 
     /**
