@@ -5,9 +5,8 @@
  * date: Tue Nov 15 15:27:52 2022
  */
 
-class Aplicacao {
+public class Aplicacao {
     // Metodo main da aplicacao
     public static void main (String[] args){
-
     }
 }
