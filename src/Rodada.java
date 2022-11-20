@@ -36,6 +36,8 @@ public class Rodada {
                     "2 - Configurar perguntas\n" +
                     "3 - Sair");
             x = scanner.nextInt();
+
+            setContRodada(0);
             switch (x) {
                 case 1:
                     if (!isPerguntasVazia()) {
@@ -137,13 +139,13 @@ public class Rodada {
     }
 
     //Setters
-    private void setContRodada(int contRodada){
+    private void setContRodada(int contRodada) {
         this.contRodada = contRodada;
     }
     private void setEscolhaAluno(int escolhaAluno) { this.escolhaAluno = escolhaAluno; }
 
     //Getters
-    public int getContRodada(){
+    public int getContRodada() {
         return this.contRodada;
     }
     public int getEscolhaAluno() { return this.escolhaAluno; }
