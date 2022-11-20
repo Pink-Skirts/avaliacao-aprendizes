@@ -35,14 +35,23 @@ public class Menu {
 
             switch (i) {
                 case 1:
-                    new Rodada();
+                    if(turmas.size() != 0) {
+                        System.out.println("Escolha uma turma: ");
+                        for (int x = 0; x < turmas.size(); x++) { //todo - juntar em um metodo
+                            System.out.println("Turma " + (x + 1));
+                        }
+                        i = scanner.nextInt();
+                        new Rodada(turmas.get(i - 1));
+                    } else {
+                        System.out.println("Nao ha uma turma suficiente para comecar uma rodada!");
+                    }
                     break;
                 case 2:
                     turmas.add(new Turma());
                     break;
                 case 3:
                     if(turmas.size() != 0) {
-                        System.out.println("Selecione a turma: ");
+                        System.out.println("Selecione a turma: "); //todo - juntar em um metodo
                         for(int x = 0; x < turmas.size(); x++) {
                             System.out.println("Turma " + (x + 1));
                         }
