@@ -150,8 +150,18 @@ public class Rodada {
         }
     }
 
-    private boolean verificarAlunosRodada(){
-        return true; //todo
+    private boolean verificarAlunosRodada(Turma turma) {
+        boolean verificado = true;
+        int i = 0;
+
+        while(verificado && i < turma.getTamanhoTurma()){
+            if(!turma.getAprendiz(i).getAvaliado()){
+                verificado = false;
+            }
+            i++;
+        }
+
+        return verificado;
     }
 
     private boolean isPerguntasVazia(){ //As 3 perguntas precisam ser preenchidas.
