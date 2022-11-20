@@ -4,16 +4,16 @@
  *  date: Sun Nov 20 15:26:26 2022:
  */
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Rodada
-{
+public class Rodada {
     private int contRodada;
     private int escolhaAluno;
     private Scanner scanner = new Scanner(System.in);
-    private ArrayList<Pergunta> perguntas = new ArrayList<>(); //Lista de perguntas
+    private ArrayList<Pergunta> perguntasFacil = new ArrayList<>(); //Lista de perguntas
+    private ArrayList<Pergunta> perguntasMedia = new ArrayList<>();
+    private ArrayList<Pergunta> perguntasDificil = new ArrayList<>();
 
     /**
      * Construtor da classe
