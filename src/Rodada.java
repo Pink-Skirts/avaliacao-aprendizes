@@ -18,22 +18,19 @@ public class Rodada {
     /**
      * Construtor da classe
      **/
-    public Rodada(Turma turma){
+    public Rodada(Turma turma) {
         setContRodada(0);
         iniciarRodada(turma);
     }
 
-    public void iniciarRodada(Turma turma){
-        perguntas.add(0, new Pergunta(1, "Quanto da 1+1?", 1));
-        perguntas.add(1, new Pergunta(1, "Quanto da 5+5?", 2));
-        perguntas.add(2, new Pergunta(1, "Quanto da 2+2?", 3));
-        perguntas.get(0).inserirAlternativas("2", "1", "3");
-        perguntas.get(1).inserirAlternativas("5", "10", "15");
-        perguntas.get(2).inserirAlternativas("2", "4", "6");
+    public void iniciarRodada(Turma turma) {
 
         boolean saida = false;
         int x;
-        while(!saida) {
+
+        addPerguntas();
+
+        while (!saida) {
             System.out.println("Escolha uma opcao: \n" +
                     "1 - Comecar (Sortear um aprendiz e pergunta)\n" +
                     "2 - Configurar perguntas\n" +
@@ -116,6 +113,27 @@ public class Rodada {
             i++;
         }
         return vazia;
+    }
+
+    public void addPerguntas(){
+        perguntasFacil.add(new Pergunta(1, "Quanto da 1+1?", 1)); //todo transformar em metodo
+        perguntasFacil.add(new Pergunta(1, "Quanto da 5+5?", 2));
+        perguntasFacil.add(new Pergunta(1, "Quanto da 2+2?", 3));
+        perguntasMedia.add(new Pergunta(2, "Quanto da (1+1)^2?", 1));
+        perguntasMedia.add(new Pergunta(2, "Quanto da (5+5)^2?", 2));
+        perguntasMedia.add(new Pergunta(2, "Quanto da (2+2)^2?", 3));
+        perguntasDificil.add(new Pergunta(3, "Quanto da (1+1)^3?", 1));
+        perguntasDificil.add(new Pergunta(3, "Quanto da (5+5)^3?", 2));
+        perguntasDificil.add(new Pergunta(3, "Quanto da (2+2)^3?", 3));
+        perguntasFacil.get(0).inserirAlternativas("2", "1", "3");
+        perguntasFacil.get(1).inserirAlternativas("5", "10", "15");
+        perguntasFacil.get(2).inserirAlternativas("2", "4", "6");
+        perguntasMedia.get(0).inserirAlternativas("4", "6", "8");
+        perguntasMedia.get(1).inserirAlternativas("500", "100", "150");
+        perguntasMedia.get(2).inserirAlternativas("6", "12", "16");
+        perguntasDificil.get(0).inserirAlternativas("8", "4", "6");
+        perguntasDificil.get(1).inserirAlternativas("100", "1000", "100000");
+        perguntasDificil.get(2).inserirAlternativas("12", "32", "64");
     }
 
     //Setters
