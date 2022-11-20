@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /*
  * title: Aplicacao.java
  * subtitle: Classe main da aplicao - Avaliacao de aprendizes
@@ -8,8 +5,7 @@ import java.util.Scanner;
  * date: Tue Nov 15 15:27:52 2022
  */
 
-public class Aplicacao //Metodo main da aplicacao
-{
+public class Aplicacao { //Metodo main da aplicacao
     public static void main(String[] args) {
         new Menu();
     }
