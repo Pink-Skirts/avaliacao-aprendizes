@@ -12,10 +12,9 @@ public class Sorteio
 
     }
 
-    public static int sortearAluno(){
-        int limiteAluno = 11;
+    public static int sortearAluno(int limite){
         Random rand = new Random();
-        return rand.nextInt(limiteAluno-1);
+        return rand.nextInt(limite-1);
     }
 
     public static int sortearPergunta(){
