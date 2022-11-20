@@ -13,7 +13,7 @@ public class Menu {
     private Scanner scanner = new Scanner(System.in);
 
     public Menu(){
-
+        iniciarMenu();
     }
 
     public void iniciarMenu(){
@@ -44,12 +44,23 @@ public class Menu {
                     if(turmas.size() != 0) {
                         System.out.println("Selecione a turma: ");
                         for(int x = 0; x < turmas.size(); x++) {
-                            System.out.println(x + "");
+                            System.out.println("Turma " + (x + 1));
+                        }
+                        int escolha = scanner.nextInt();
+
+                        //Impedir o usuario de escolher uma turma nao-existente
+                        if(escolha <= turmas.size() && escolha > 0) {
+                            turmas.get(escolha - 1).mostrarAprendizes();
+                        } else {
+                            System.out.println("Entrada incorreta!");
                         }
                     } else {
-                        System.out.println("");
+                        System.out.println("Nao ha nenhuma turma existente!");
                     }
-                     break;
+
+
+
+                    break;
                 case 4:
                     boolean saidaOpcoes = false; //Configuracoes das rodadas + outros
                     while(!saidaOpcoes){
