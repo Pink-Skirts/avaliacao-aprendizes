@@ -68,7 +68,7 @@ public class Pergunta
         alternativas.add(new Alternativa(alt1, 1));
         alternativas.add(new Alternativa(alt2, 2));
         alternativas.add(new Alternativa(alt3, 3));
-        alternativas.set(4, new Alternativa("Ajuda", 4));
-        alternativas.set(5, new Alternativa("Parar", 5));
+        alternativas.set(3, new Alternativa("Ajuda", 4));
+        alternativas.set(4, new Alternativa("Parar", 5));
     }
 }
