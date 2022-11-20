@@ -14,12 +14,12 @@ public class Sorteio
 
     public static int sortearAluno(int limite){
         Random rand = new Random();
-        return rand.nextInt(limite-1);
+        return rand.nextInt(limite - 1);
     }
 
     public static int sortearPergunta(){
-        int limitePergunta = 5;
+        int limitePergunta = 3;
         Random rand = new Random();
-        return rand.nextInt(limitePergunta-1);
+        return rand.nextInt(limitePergunta - 1);
     }
 }
