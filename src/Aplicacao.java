@@ -80,7 +80,6 @@ public class Aplicacao //Metodo main da aplicacao
                     saida = true;
                     break;
             }
-
         }
     }
 }
