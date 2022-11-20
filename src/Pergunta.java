@@ -72,10 +72,10 @@ public class Pergunta
         while(i < alternativas.size() - 2){
             System.out.print((i + 1) + " - ");
             String texto = scanner.nextLine();
-            alternativas.set(i ,new Alternativa(texto, i));
+            alternativas.add(new Alternativa(texto, i));
             i++;
         }
-        alternativas.set(4, new Alternativa("Ajuda", 5));
-        alternativas.set(5, new Alternativa("Parar", 6));
+        alternativas.set(4, new Alternativa("Ajuda", 4));
+        alternativas.set(5, new Alternativa("Parar", 5));
     }
 }
