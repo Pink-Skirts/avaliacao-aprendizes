@@ -63,7 +63,7 @@ public class Turma {
                 }
             }
         } while (!nome.equals("") || !valido);
-        System.out.println("Tamanho da turma" + turma.size()); //Mostra o tamanho da turma criada
+        System.out.println("Tamanho da turma: " + turma.size() + " alunos"); //Mostra o tamanho da turma criada
     }
 
     /**
