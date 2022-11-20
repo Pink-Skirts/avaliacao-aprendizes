@@ -59,7 +59,6 @@ public class Pergunta
     public int getResposta(){
         return this.resposta;
     }
-    public ArrayList<Alternativa> getAlternativas() { return alternativas; }
 
     public void inserirAlternativas(String alt1, String alt2, String alt3){
         //2 espaços do armazenador de alternativas são utilizados para "Ajuda" e "Parar"
