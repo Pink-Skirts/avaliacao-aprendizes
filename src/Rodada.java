@@ -164,11 +164,25 @@ public class Rodada {
         return verificado;
     }
 
-    private boolean isPerguntasVazia(){ //As 3 perguntas precisam ser preenchidas.
+    private boolean isPerguntasVazia() { //As 3 perguntas precisam ser preenchidas.
         boolean vazia = false;
         int i = 0;
-        while(i < perguntas.size() && !vazia){
-            if(perguntas.get(i) == null){
+        while (i < perguntasFacil.size() && !vazia) {
+            if (perguntasFacil.get(i) == null) {
+                vazia = true;
+            }
+            i++;
+        }
+        i = 0;
+        while (i < perguntasMedia.size() && !vazia) {
+            if (perguntasFacil.get(i) == null) {
+                vazia = true;
+            }
+            i++;
+        }
+        i = 0;
+        while (i < perguntasDificil.size() && !vazia) {
+            if (perguntasFacil.get(i) == null) {
                 vazia = true;
             }
             i++;
