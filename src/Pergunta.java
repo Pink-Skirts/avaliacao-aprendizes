@@ -65,6 +65,8 @@ public class Pergunta
         int i = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insira as alternativas da pergunta: ");
+
+        //2 espaços do armazenador de alternativas são utilizados para "Ajuda" e "Parar"
         while(i < alternativas.length - 2){
             System.out.print((i + 1) + " - ");
             String texto = scanner.nextLine();
