@@ -9,6 +9,7 @@ class Aprendiz {
 
     private String nome;
     private int nota;
+    private boolean avaliado = false;
 
     /**
      * Construtor da classe aprendiz
