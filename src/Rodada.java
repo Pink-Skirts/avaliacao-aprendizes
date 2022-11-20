@@ -1,10 +1,10 @@
-import java.util.Scanner;
-
-/*  title:
+/*  title: Rodada.java
  *  subtitle: Laboratorio de Modelagem (LMA)
- *  author: GM de Oliveira, GS Vilmar, PTV Giorgi
- *  date: 18/10/2022
+ *  authors: Guilherme Monteiro de Oliveira, Gustavo Scaglione Vilmar, Pietro Tadeu Vieira Giorgi
+ *  date: Sun Nov 20 15:26:26 2022:
  */
+
+import java.util.Scanner;
 
 public class Rodada
 {
@@ -15,6 +15,9 @@ public class Rodada
     //private Aprendiz[] aprendizes = turma.getTurma();
     private Pergunta[] perguntas = new Pergunta[3];
 
+    /**
+     * Construtor da classe
+     **/
     public Rodada(){
         setContRodada(0);
         iniciarRodada();

@@ -1,7 +1,8 @@
-/*  title:
+/*
+ *  title: Ajuda.java
  *  subtitle: Laboratorio de Modelagem (LMA)
- *  author: GM de Oliveira, GS Vilmar, PTV Giorgi
- *  date: 18/10/2022
+ *  authors: Guilherme Monteiro de Oliveira, Gustavo Scaglione Vilmar, Pietro Tadeu Vieira Giorgi
+ *  date: Sun Nov 20 15:23:12 2022
  */
 
 public class Ajuda extends Sorteio
