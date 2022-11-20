@@ -4,6 +4,8 @@
  *  date: Sun Nov 20 15:26:26 2022:
  */
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Rodada
@@ -11,34 +13,40 @@ public class Rodada
     private int contRodada;
     private int escolhaAluno;
     private Scanner scanner = new Scanner(System.in);
-    private Turma turma = new Turma();
-    //private Aprendiz[] aprendizes = turma.getTurma();
-    private Pergunta[] perguntas = new Pergunta[3];
+    private ArrayList<Pergunta> perguntas = new ArrayList<>(); //Lista de perguntas
 
     /**
      * Construtor da classe
      **/
-    public Rodada(){
+    public Rodada(Turma turma){
         setContRodada(0);
-        iniciarRodada();
+        iniciarRodada(turma);
     }
 
-    public void iniciarRodada(){
+    public void iniciarRodada(Turma turma){
+        perguntas.add(0, new Pergunta(1, "Quanto da 1+1?", 1));
+        perguntas.add(1, new Pergunta(1, "Quanto da 5+5?", 2));
+        perguntas.add(2, new Pergunta(1, "Quanto da 2+2?", 3));
+        perguntas.get(0).inserirAlternativas("2", "1", "3");
+        perguntas.get(1).inserirAlternativas("5", "10", "15");
+        perguntas.get(2).inserirAlternativas("2", "4", "6");
+
         boolean saida = false;
         int x;
         while(!saida) {
             System.out.println("Escolha uma opcao: \n" +
-                    "1 - Comecar (Sortear um aprendiz)\n" +
+                    "1 - Comecar (Sortear um aprendiz e pergunta)\n" +
                     "2 - Configurar perguntas\n" +
                     "3 - Sair");
             x = scanner.nextInt();
             switch (x) {
                 case 1:
-                    if (!isPerguntasVazia() ) { //&& !isAprendizesVazia()
-                        System.out.println("Sorteando aluno...");
-                        //System.out.println("Aluno escolhido: " + aprendizes[Sorteio.sortearAluno()].getNome());
-                        System.out.println("Sorteando pergunta...");
-                        System.out.println("Pergunta sorteada: " + perguntas[Sorteio.sortearPergunta()].getPergunta());
+                    if (!isPerguntasVazia()) {
+                        System.out.println("Aluno escolhido: " + turma.getAprendiz(Sorteio.sortearAluno(turma.getTamanhoTurma())).getNome());
+                        int indicePerguntaEscolhida = Sorteio.sortearPergunta();
+                        System.out.println("Pergunta sorteada: " + perguntas.get(indicePerguntaEscolhida).getPergunta());
+                        System.out.println("Escolha uma alternativa: ");
+                        perguntas.get(indicePerguntaEscolhida).mostrarAlternativas();
                     } else {
                         System.out.println("Configuracoes insuficientes!");
                     }
@@ -47,7 +55,7 @@ public class Rodada
                     boolean saidaPerguntas = false;
                     while(!saidaPerguntas) {
                         System.out.println("Menu de perguntas: \n" +
-                                "1 - Inserir/Sobrescrever o texto de uma pergunta\n" +
+                                "1 - Sobrescrever o texto de uma pergunta\n" +
                                 "2 - Alterar alternativa(s) de uma pergunta\n" +
                                 "3 - Sair\n");
                         x = scanner.nextInt();
@@ -63,17 +71,17 @@ public class Rodada
                                         case 1:
                                             System.out.println("Insira o texto da pergunta: ");
                                             input = scanner.next();
-                                            perguntas[1].setPergunta(input);
+                                            perguntas.get(0).setPergunta(input);
                                             break;
                                         case 2:
                                             System.out.println("Insira o texto da pergunta: ");
                                             input = scanner.next();
-                                            perguntas[2].setPergunta(input);
+                                            perguntas.get(1).setPergunta(input);
                                             break;
                                         case 3:
                                             System.out.println("Insira o texto da pergunta: ");
                                             input = scanner.next();
-                                            perguntas[3].setPergunta(input);
+                                            perguntas.get(2).setPergunta(input);
                                             break;
                                         default:
                                             saidaConfig = true;
@@ -100,25 +108,15 @@ public class Rodada
 
     private boolean isPerguntasVazia(){ //As 3 perguntas precisam ser preenchidas.
         boolean vazia = false;
-        for(int i = 0; i < perguntas.length; i++){
-            if(perguntas[i] == null){
+        int i = 0;
+        while(i < perguntas.size() && !vazia){
+            if(perguntas.get(i) == null){
                 vazia = true;
             }
+            i++;
         }
         return vazia;
     }
-/*
-    private boolean isAprendizesVazia(){
-        boolean vazia = false;
-        for(int i = 0; i < aprendizes.length; i++){
-            //if(aprendizes[i] == null){
-                vazia = true;
-            }
-        }
-        return vazia;
-    }
-
- */
 
     //Setters
     private void setContRodada(int contRodada){
