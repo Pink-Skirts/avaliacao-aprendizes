@@ -10,12 +10,14 @@ import java.util.Scanner;
 
 public class Turma {
     private ArrayList<Aprendiz> turma; //Criando uma lista "modular" de aprendizes para compor a turma
+    private int limiteTamanhoTurma;
 
     /**
      * Construtor da classe turma
      **/
     public Turma (){
         this.turma = new ArrayList<Aprendiz>(); //Criando uma nova turma
+        preencherTurma();
     }
 
     /**
@@ -26,6 +28,7 @@ public class Turma {
     public int getTamanhoTurma (){
         return turma.size();
     }
+    public int getLimiteTamanhoTurma() { return limiteTamanhoTurma; }
 
     /**
      * Retorna a lista da turma
@@ -36,6 +39,8 @@ public class Turma {
         return turma;
     }
 
+    public void setLimiteTamanhoTurma(int limiteTamanhoTurma){ limiteTamanhoTurma = this.limiteTamanhoTurma; }
+
     /**
      * Preenche a turma com os aprendizes
      **/
@@ -44,7 +49,8 @@ public class Turma {
         boolean valido;
         String nome;
         do {
-            System.out.println("Insira o nome do Aprendiz para ser inserido na Turma, quando estiver terminado aperte enter para finalizar.");
+            System.out.println("Insira o nome do aprendiz a ser inserido na Turma (quando estiver terminado aperte " +
+                    "enter para finalizar): ");
             valido = true;
             nome = entrada.nextLine();
             if (nome.matches(".*[0-9].*")){ // Verificacao de inconsistencias no nome do aprendiz
@@ -57,7 +63,7 @@ public class Turma {
                 }
             }
         } while (!nome.equals("") || !valido);
-        System.out.println("Tamanho da turma" + turma.size()); //Mostra o tamanho da turma criada
+        System.out.println("Tamanho da turma: " + turma.size() + " alunos"); //Mostra o tamanho da turma criada
     }
 
     /**
