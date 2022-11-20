@@ -8,18 +8,17 @@ import java.util.Random;
 
 public class Sorteio
 {
+    static Random rand = new Random();
+
     public Sorteio(){
 
     }
 
     public static int sortearAluno(int limite){
-        Random rand = new Random();
-        return rand.nextInt(limite - 1);
+        return rand.nextInt(limite);
     }
 
-    public static int sortearPergunta(){
-        int limitePergunta = 3;
-        Random rand = new Random();
-        return rand.nextInt(limitePergunta - 1);
+    public static int sortearPergunta(int limite){
+        return rand.nextInt(limite);
     }
 }
