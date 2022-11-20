@@ -1,13 +1,11 @@
-import exceptions.*;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /*  title:
  *  subtitle: Laboratorio de Modelagem (LMA)
  *  author: GM de Oliveira, GS Vilmar, PTV Giorgi
  *  date: 18/10/2022
  */
+
+import exceptions.*;
+import java.util.ArrayList;
 
 public class Pergunta
 {
@@ -68,7 +66,13 @@ public class Pergunta
         alternativas.add(new Alternativa(alt1, 1));
         alternativas.add(new Alternativa(alt2, 2));
         alternativas.add(new Alternativa(alt3, 3));
-        alternativas.set(3, new Alternativa("Ajuda", 4));
-        alternativas.set(4, new Alternativa("Parar", 5));
+        alternativas.add(new Alternativa("Ajuda", 4));
+        alternativas.add(new Alternativa("Parar", 5));
+    }
+
+    public void mostrarAlternativas(){
+        for (int i = 0; i < 5; i++){
+            System.out.println((i + 1) + " - " + alternativas.get(i).getTextoAlternativa());
+        }
     }
 }
