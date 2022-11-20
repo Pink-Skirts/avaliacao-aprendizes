@@ -42,7 +42,7 @@ public class Aplicacao //Metodo main da aplicacao
                     turma.preencherTurma(); //todo
                     break;
                 case 3:
-                    //turma.mostrarTurma(); //todo
+                    turma.mostrarAprendizes(); //todo
                     break;
                 case 4:
                     config(); //Configuracoes das rodadas + outros
