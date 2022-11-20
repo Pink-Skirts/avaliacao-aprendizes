@@ -63,18 +63,11 @@ public class Pergunta
     }
     public ArrayList<Alternativa> getAlternativas() { return alternativas; }
 
-    public void inserirAlternativas(){
-        int i = 0;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Insira as alternativas da pergunta: ");
-
+    public void inserirAlternativas(String alt1, String alt2, String alt3){
         //2 espaços do armazenador de alternativas são utilizados para "Ajuda" e "Parar"
-        while(i < alternativas.size() - 2){
-            System.out.print((i + 1) + " - ");
-            String texto = scanner.nextLine();
-            alternativas.add(new Alternativa(texto, i));
-            i++;
-        }
+        alternativas.add(new Alternativa(alt1, 1));
+        alternativas.add(new Alternativa(alt2, 2));
+        alternativas.add(new Alternativa(alt3, 3));
         alternativas.set(4, new Alternativa("Ajuda", 4));
         alternativas.set(5, new Alternativa("Parar", 5));
     }
