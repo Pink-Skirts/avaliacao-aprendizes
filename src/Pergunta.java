@@ -1,4 +1,6 @@
 import exceptions.*;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*  title:
@@ -13,7 +15,7 @@ public class Pergunta
     private String pergunta = "";
     private int resposta;
 
-    private Alternativa[] alternativas = new Alternativa[6];
+    private ArrayList<Alternativa> alternativas = new ArrayList<>();
 
     public Pergunta(int dificuldade, String pergunta, int resposta){
         try {
@@ -59,7 +61,7 @@ public class Pergunta
     public int getResposta(){
         return this.resposta;
     }
-    public Alternativa[] getAlternativas() { return alternativas.clone(); }
+    public ArrayList<Alternativa> getAlternativas() { return alternativas; }
 
     public void inserirAlternativas(){
         int i = 0;
@@ -67,13 +69,13 @@ public class Pergunta
         System.out.println("Insira as alternativas da pergunta: ");
 
         //2 espaços do armazenador de alternativas são utilizados para "Ajuda" e "Parar"
-        while(i < alternativas.length - 2){
+        while(i < alternativas.size() - 2){
             System.out.print((i + 1) + " - ");
             String texto = scanner.nextLine();
-            alternativas[i] = new Alternativa(texto, i);
+            alternativas.set(i ,new Alternativa(texto, i));
             i++;
         }
-        alternativas[i] = new Alternativa("Ajuda", 5);
-        alternativas[i] = new Alternativa("Parar", 6);
+        alternativas.set(4, new Alternativa("Ajuda", 5));
+        alternativas.set(5, new Alternativa("Parar", 6));
     }
 }
