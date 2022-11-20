@@ -72,10 +72,14 @@ public class Turma {
     public void mostrarAprendizes (){
         if (!turma.isEmpty()){
             for(int i = 0; i < turma.size(); i++){
-                System.out.println((i + 1) + " - " + "Nome: " + turma.get(i).getNome() + " Nota: " + turma.get(i).getNota()); //Cada elemento na lista da turma sera mostrado na tela
+                System.out.println((i + 1) + " - " + "Nome: " + turma.get(i).getNome() + " --> Nota: " + turma.get(i).getNota()); //Cada elemento na lista da turma sera mostrado na tela
             }
         } else {
             System.out.println("A turma esta vazia"); //Caso a turma esteja vazia
         }
+    }
+
+    public Aprendiz getAprendiz(int index){
+        return turma.get(index);
     }
 }
