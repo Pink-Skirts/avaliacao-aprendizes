@@ -29,6 +29,9 @@ class Aprendiz {
     public void setNota (int nota){
         this.nota = nota;
     }
+    public void setAvaliado(boolean avaliado) {
+        this.avaliado = avaliado;
+    }
 
     /**
      * Getter do nome do aprendiz
@@ -37,6 +40,10 @@ class Aprendiz {
      **/
     public int getNota (){
         return nota;
+    }
+
+    public boolean getAvaliado(){
+        return this.avaliado;
     }
 
     /**
