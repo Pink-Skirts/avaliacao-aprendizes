@@ -28,6 +28,15 @@ public class Turma {
     }
 
     /**
+     * Retorna a lista da turma
+     *
+     * @return turma   ArrayList da Aprendizes
+     **/
+    public ArrayList<Aprendiz> getTurma (){
+        return turma;
+    }
+
+    /**
      * Preenche a turma com os aprendizes
      **/
     public void preencherTurma(){
