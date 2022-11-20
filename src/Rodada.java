@@ -40,19 +40,68 @@ public class Rodada {
             setContRodada(0);
             switch (x) {
                 case 1:
-                    if (!isPerguntasVazia()) {
-                        System.out.println("Aluno escolhido: " + turma.getAprendiz(Sorteio.sortearAluno(turma.getTamanhoTurma())).getNome());
-                        int indicePerguntaEscolhida = Sorteio.sortearPergunta();
-                        System.out.println("Pergunta sorteada: " + perguntas.get(indicePerguntaEscolhida).getPergunta());
-                        System.out.println("Escolha uma alternativa: ");
-                        perguntas.get(indicePerguntaEscolhida).mostrarAlternativas();
-                    } else {
-                        System.out.println("Configuracoes insuficientes!");
-                    }
+                        if (!isPerguntasVazia() && !verificarAlunosRodada(turma)) {
+                            int indiceAlunoEscolhido;
+                            do {
+                                indiceAlunoEscolhido = Sorteio.sortearAluno(turma.getTamanhoTurma());
+                            } while(turma.getAprendiz(indiceAlunoEscolhido).getAvaliado());
+
+                            System.out.println("Aluno escolhido: " + turma.getAprendiz(indiceAlunoEscolhido).getNome());
+
+                            boolean parar = false;
+                            Pergunta perguntaAux;
+                            int indicePerguntaEscolhida;
+
+                            while (!parar && getContRodada() < 3) {
+                                if(getContRodada() == 0) {
+                                    indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasFacil.size());
+                                    perguntaAux = perguntasFacil.get(indicePerguntaEscolhida);
+                                } else if (getContRodada() == 1) {
+                                    indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasMedia.size());
+                                    perguntaAux = perguntasMedia.get(indicePerguntaEscolhida);
+                                } else {
+                                    indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasDificil.size());
+                                    perguntaAux = perguntasDificil.get(indicePerguntaEscolhida);
+                                }
+                                System.out.println("Pergunta sorteada: " + perguntaAux.getPergunta());
+
+                                System.out.println("Escolha uma alternativa: ");
+                                perguntaAux.mostrarAlternativas();
+
+                                x = scanner.nextInt();
+                                if (x == perguntaAux.getResposta()) {
+                                    System.out.println("Voce acertou!");
+                                    if (getContRodada() == 0) {
+                                        turma.getAprendiz(indiceAlunoEscolhido).setNota(4);
+                                    } else if (getContRodada() == 1 && turma.getAprendiz(indiceAlunoEscolhido).getNota()
+                                            == 4) {
+                                        turma.getAprendiz(indiceAlunoEscolhido).setNota(7);
+                                    } else if (getContRodada() == 2 && turma.getAprendiz(indiceAlunoEscolhido).getNota()
+                                            == 7) {
+                                        turma.getAprendiz(indiceAlunoEscolhido).setNota(10);
+                                        turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
+                                    }
+                                    setContRodada(getContRodada() + 1);
+                                } else if (x == 4) {
+                                    //new Ajuda(turma.getTamanhoTurma());
+                                    setContRodada(getContRodada() + 1);
+                                } else if (x == 5) {
+                                    new Parada();
+                                    parar = true;
+                                    turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
+                                } else {
+                                    turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
+                                    System.out.println("Resposta incorreta!");
+                                    parar = true;
+                                }
+                            }
+                        } else {
+                            System.out.println("Configuracoes insuficientes!");
+                        }
                     break;
                 case 2:
                     boolean saidaPerguntas = false;
-                    while(!saidaPerguntas) {
+                    while (!saidaPerguntas) {
                         System.out.println("Menu de perguntas: \n" +
                                 "1 - Sobrescrever o texto de uma pergunta\n" +
                                 "2 - Alterar alternativa(s) de uma pergunta\n" +
@@ -61,7 +110,7 @@ public class Rodada {
                         switch (x) {
                             case 1:
                                 boolean saidaConfig = false;
-                                while(!saidaConfig) {
+                                while (!saidaConfig) {
                                     System.out.println("Modificar pergunta de numero 1, 2, ou 3?: \n" +
                                             "(Insira 4 para cancelar)\n");
                                     x = scanner.nextInt();
@@ -70,17 +119,17 @@ public class Rodada {
                                         case 1:
                                             System.out.println("Insira o texto da pergunta: ");
                                             input = scanner.next();
-                                            perguntas.get(0).setPergunta(input);
+                                            //perguntas.get(0).setPergunta(input);
                                             break;
                                         case 2:
                                             System.out.println("Insira o texto da pergunta: ");
                                             input = scanner.next();
-                                            perguntas.get(1).setPergunta(input);
+                                            //perguntas.get(1).setPergunta(input);
                                             break;
                                         case 3:
                                             System.out.println("Insira o texto da pergunta: ");
                                             input = scanner.next();
-                                            perguntas.get(2).setPergunta(input);
+                                            //perguntas.get(2).setPergunta(input);
                                             break;
                                         default:
                                             saidaConfig = true;
