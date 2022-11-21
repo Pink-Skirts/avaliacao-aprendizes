@@ -9,6 +9,10 @@ public class Aplicacao { //Metodo main da aplicacao
     public static void main(String[] args) {
         new Menu();
     }
+
+    public static void limparTela(){
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    }
 }
 
 //Cenario 1: Aprendizes acertam as tres perguntas da rodada

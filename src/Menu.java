@@ -20,6 +20,7 @@ public class Menu {
 
         boolean saida = false;
 
+        Aplicacao.limparTela();
         while(!saida) {
             System.out.print(
                     "____________________________________________________\n" +
