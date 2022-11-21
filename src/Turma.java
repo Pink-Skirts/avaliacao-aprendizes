@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class Turma {
     private ArrayList<Aprendiz> turma; //Criando uma lista "modular" de aprendizes para compor a turma
-    private int limiteTamanhoTurma;
 
     /**
      * Construtor da classe turma
@@ -28,7 +27,6 @@ public class Turma {
     public int getTamanhoTurma (){
         return turma.size();
     }
-    public int getLimiteTamanhoTurma() { return limiteTamanhoTurma; }
 
     /**
      * Retorna a lista da turma
@@ -38,8 +36,6 @@ public class Turma {
     public ArrayList<Aprendiz> getTurma (){
         return turma;
     }
-
-    public void setLimiteTamanhoTurma(int limiteTamanhoTurma){ limiteTamanhoTurma = this.limiteTamanhoTurma; }
 
     /**
      * Preenche a turma com os aprendizes
@@ -81,5 +77,9 @@ public class Turma {
 
     public Aprendiz getAprendiz(int index){
         return turma.get(index);
+    }
+
+    public void removerAprendiz(int index){
+        turma.remove(index);
     }
 }
