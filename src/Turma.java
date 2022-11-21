@@ -82,4 +82,8 @@ public class Turma {
     public void removerAprendiz(int index){
         turma.remove(index);
     }
+
+    public void adicionarAprendiz(String nome){
+        turma.add(new Aprendiz(nome));
+    }
 }
