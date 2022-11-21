@@ -46,96 +46,126 @@ public class Rodada {
 
         while (!saida) {
             Aplicacao.limparTela();
-            boolean parar = false;
-            Pergunta perguntaAux;
-            int indicePerguntaEscolhida;
-            int indiceAlunoEscolhido;
-            if ((!isPerguntasVazia() && !verificarAlunosRodada(turma)) || rodadaAjuda) {
-                if(!rodadaAjuda) {
-                    indiceAlunoEscolhido = sortearAluno(turma);
-                    System.out.println("Aluno escolhido: " + turma.getAprendiz(indiceAlunoEscolhido).getNome());
-                } else {
-                    indiceAlunoEscolhido = indiceAprendizAjuda;
-                    System.out.println("Aluno escolhido: " + turma.getAprendiz(indiceAlunoEscolhido).getNome());
-                }
-                while (!parar && getContRodada() < 3) {
-                    if(getContRodada() == 0) {
-                        indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasFacil.size());
-                        if(!rodadaAjuda) {
-                            perguntaAux = perguntasFacil.get(indicePerguntaEscolhida);
-                        } else {
-                            perguntaAux = perguntaAjuda;
-                        }
-                    } else if (getContRodada() == 1) {
-                        indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasMedia.size());
-                        if(!rodadaAjuda) {
-                            perguntaAux = perguntasMedia.get(indicePerguntaEscolhida);
-                        } else {
-                            perguntaAux = perguntaAjuda;
-                        }
-                    } else {
-                        indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasDificil.size());
-                        if(!rodadaAjuda) {
-                            perguntaAux = perguntasDificil.get(indicePerguntaEscolhida);
-                        } else {
-                            perguntaAux = perguntaAjuda;
-                        }
-                    }
-                    System.out.println("Pergunta sorteada: " + perguntaAux.getPergunta());
 
-                    System.out.println("Escolha uma alternativa: ");
-                    perguntaAux.mostrarAlternativas();
+            if(!rodadaAjuda){
+                System.out.println("Escolha uma opcao: \n" +
+                                   "1 - Comecar (Sortear um aprendiz e pergunta)\n" +
+                                   "2 - Voltar para o menu");
+            }
 
-                    x = scanner.nextInt();
-                    Aplicacao.limparTela();
-                    if (x == perguntaAux.getResposta()) {
-                        System.out.println("Voce acertou!");
-                        if (getContRodada() == 0) {
-                            turma.getAprendiz(indiceAlunoEscolhido).setNota(4);
-                            if(rodadaAjuda){
-                                rodadaAjuda = false;
-                            }
-                        } else if (getContRodada() == 1 && turma.getAprendiz(indiceAlunoEscolhido).getNota()
-                                   == 4) {
-                            turma.getAprendiz(indiceAlunoEscolhido).setNota(7);
-                            if(rodadaAjuda){
-                                rodadaAjuda = false;
-                            }
-                        } else if (getContRodada() == 2 && turma.getAprendiz(indiceAlunoEscolhido).getNota()
-                                   == 7) {
-                            turma.getAprendiz(indiceAlunoEscolhido).setNota(10);
-                            turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
-                            if(rodadaAjuda){
-                                rodadaAjuda = false;
-                                parar = true;
-                                saida = true;
-                            }
-                        }
-                        setContRodada(getContRodada() + 1);
-                    } else if (x == 4) {
-                        turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
-                        if(!verificarAlunosRodada(turma)){
-                            int indiceAprendiz = sortearAluno(turma);
-                            new Ajuda(turma, indiceAprendiz, perguntaAux, getContRodada());
-                            turma.getAprendiz(indiceAlunoEscolhido).setNota(turma.getAprendiz(indiceAprendiz).getNota());
-                            parar = true;
-                            saida = true;
-                        } else {
-                            System.out.println("Não exites aluno disponivel para ajudar");
-                        }
-                    } else if (x == 5) { //TODO -- Montar a classe parada
-                        new Parada();
-                        parar = true;
-                        turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
-                    } else {
-                        turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
-                        System.out.println("Resposta incorreta!");
-                        parar = true;
-                    }
-                }
+            int escolha;
+
+            if (!rodadaAjuda){
+                escolha = scanner.nextInt();
             } else {
-                System.out.println("Nao ha nenhum aluno a ser avaliado!");
+               escolha = 1;
+            }
+
+            switch (escolha) {
+                case 1:
+                     boolean parar = false;
+                     Pergunta perguntaAux;
+                     int indicePerguntaEscolhida;
+                     int indiceAlunoEscolhido;
+                     if ((!isPerguntasVazia() && !verificarAlunosRodada(turma)) || rodadaAjuda) {
+                         if(!rodadaAjuda) {
+                             indiceAlunoEscolhido = sortearAluno(turma);
+                             System.out.println("Aluno escolhido: " + turma.getAprendiz(indiceAlunoEscolhido).getNome());
+                             setContRodada(0);
+                         } else {
+                             indiceAlunoEscolhido = indiceAprendizAjuda;
+                            System.out.println("Aluno escolhido: " + turma.getAprendiz(indiceAlunoEscolhido).getNome());
+                         }
+                         while (!parar && getContRodada() < 3) {
+                             if(getContRodada() == 0) {
+                                 indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasFacil.size());
+                                 if(!rodadaAjuda) {
+                                     perguntaAux = perguntasFacil.get(indicePerguntaEscolhida);
+                                 } else {
+                                     perguntaAux = perguntaAjuda;
+                                 }
+                             } else if (getContRodada() == 1) {
+                                 indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasMedia.size());
+                                 if(!rodadaAjuda) {
+                                     perguntaAux = perguntasMedia.get(indicePerguntaEscolhida);
+                                 } else {
+                                     perguntaAux = perguntaAjuda;
+                                 }
+                             } else {
+                                 indicePerguntaEscolhida = Sorteio.sortearPergunta(perguntasDificil.size());
+                                 if(!rodadaAjuda) {
+                                     perguntaAux = perguntasDificil.get(indicePerguntaEscolhida);
+                                 } else {
+                                     perguntaAux = perguntaAjuda;
+                                 }
+                             }
+                             System.out.println("Pergunta sorteada: " + perguntaAux.getPergunta());
+
+                             System.out.println("Escolha uma alternativa: ");
+                             perguntaAux.mostrarAlternativas();
+
+                             x = scanner.nextInt();
+                             Aplicacao.limparTela();
+                             if (x == perguntaAux.getResposta()) {
+                                 System.out.println("Voce acertou!");
+                                 if (getContRodada() == 0) {
+                                     turma.getAprendiz(indiceAlunoEscolhido).setNota(4);
+                                     if(rodadaAjuda){
+                                         rodadaAjuda = false;
+                                     }
+                                 } else if (getContRodada() == 1 && turma.getAprendiz(indiceAlunoEscolhido).getNota()
+                                            == 4) {
+                                     turma.getAprendiz(indiceAlunoEscolhido).setNota(7);
+                                     if(rodadaAjuda){
+                                         rodadaAjuda = false;
+                                     }
+                                 } else if (getContRodada() == 2 && turma.getAprendiz(indiceAlunoEscolhido).getNota()
+                                            == 7) {
+                                     turma.getAprendiz(indiceAlunoEscolhido).setNota(10);
+                                     turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
+                                     if(rodadaAjuda){
+                                         rodadaAjuda = false;
+                                         parar = true;
+                                         saida = true;
+                                     }
+                                 }
+                                 setContRodada(getContRodada() + 1);
+                             } else if (x == 4) {
+                                 if(!rodadaAjuda) {
+                                     turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
+                                     if(!verificarAlunosRodada(turma)){
+                                         int indiceAprendiz = sortearAluno(turma);
+                                         new Ajuda(turma, indiceAprendiz, perguntaAux, getContRodada());
+                                         turma.getAprendiz(indiceAlunoEscolhido).setNota(turma.getAprendiz(indiceAprendiz).getNota());
+                                         parar = true;
+                                         saida = true;
+                                     } else {
+                                         System.out.println("Não exites aluno disponivel para ajudar");
+                                     }
+                                 } else {
+                                     System.out.println("A opção de ajuda ja foi utilizada");
+                                 }
+                             } else if (x == 5) { //TODO -- Montar a classe parada
+                                 Parada parada = new Parada(turma, indiceAlunoEscolhido, getContRodada());
+                                 parar = parada.pararRodada();
+                                 parada.contabilizarPontos();
+                                 turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
+                             } else {
+                                 turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
+                                 System.out.println("Resposta incorreta!");
+                                 parar = true;
+                             }
+                         }
+                     } else {
+                         System.out.println("Configuracoes insuficientes!");
+                         saida = true;
+                     }
+                     break;
+            case 2:
                 saida = true;
+                break;
+            default:
+                break;
             }
         }
     }
