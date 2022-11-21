@@ -106,4 +106,18 @@ public class Menu {
             }
         }
     }
+
+    private void mostrarTurmas() {
+        if (turmas.size() != 0) {
+            for (int x = 0; x < turmas.size(); x++) {
+                System.out.println("Turma " + (x + 1));
+            }
+        }
+    }
+
+    private void mostraAlunosTurma(Turma turma) {
+        for (int x = 0; x < turma.getTamanhoTurma(); x++) {
+            System.out.println("Aluno " + x + " - " + turma.getAprendiz(x));
+        }
+    }
 }

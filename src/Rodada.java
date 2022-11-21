@@ -134,7 +134,7 @@ public class Rodada {
                     }
                 }
             } else {
-                System.out.println("Configuracoes insuficientes!");
+                System.out.println("Nao ha nenhum aluno a ser avaliado!");
                 saida = true;
             }
         }
