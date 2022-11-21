@@ -48,9 +48,9 @@ public class Turma {
         Scanner entrada = new Scanner(System.in);
         boolean valido;
         String nome;
-        do {
-            System.out.println("Insira o nome do aprendiz a ser inserido na Turma (quando estiver terminado aperte " +
+        System.out.println("Insira o nome do aprendiz a ser inserido na Turma (quando estiver terminado aperte " +
                     "enter para finalizar): ");
+        do {
             valido = true;
             nome = entrada.nextLine();
             if (nome.matches(".*[0-9].*")){ // Verificacao de inconsistencias no nome do aprendiz

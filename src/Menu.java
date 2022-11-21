@@ -44,7 +44,7 @@ public class Menu {
                         i = scanner.nextInt();
                         new Rodada(turmas.get(i - 1));
                     } else {
-                        System.out.println("Nao ha uma turma suficiente para comecar uma rodada!");
+                        System.out.println("\n\nNao ha uma turma suficiente para comecar uma rodada!");
                     }
                     break;
                 case 2:
@@ -52,7 +52,7 @@ public class Menu {
                     break;
                 case 3:
                     if(turmas.size() != 0) {
-                        System.out.println("Selecione a turma: "); //todo - juntar em um metodo
+                        System.out.println("\n\nSelecione a turma: "); //todo - juntar em um metodo
                         for(int x = 0; x < turmas.size(); x++) {
                             System.out.println("Turma " + (x + 1));
                         }
@@ -65,7 +65,7 @@ public class Menu {
                             System.out.println("Entrada incorreta!");
                         }
                     } else {
-                        System.out.println("Nao ha nenhuma turma existente!");
+                        System.out.println("\n\nNao ha nenhuma turma existente!");
                     }
 
 
