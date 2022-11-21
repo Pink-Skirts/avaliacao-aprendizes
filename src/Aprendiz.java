@@ -33,6 +33,10 @@ class Aprendiz {
         this.avaliado = avaliado;
     }
 
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
     /**
      * Getter do nome do aprendiz
      *
