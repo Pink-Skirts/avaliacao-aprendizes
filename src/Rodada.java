@@ -231,7 +231,7 @@ public class Rodada {
         perguntasDificil.add(new Pergunta(3, "Quanto da (2+2)^3?", 3));
         perguntasFacil.get(0).inserirAlternativas("2", "1", "3", "25");
         perguntasFacil.get(1).inserirAlternativas("5", "10", "15", "6");
-        perguntasFacil.get(2).inserirAlternativas("2", "4", "6", "8");
+        perguntasFacil.get(2).inserirAlternativas("2", "6", "4", "8");
         perguntasMedia.get(0).inserirAlternativas("4", "6", "8", "10");
         perguntasMedia.get(1).inserirAlternativas("500", "100", "150", "14");
         perguntasMedia.get(2).inserirAlternativas("6", "12", "16", "14");
