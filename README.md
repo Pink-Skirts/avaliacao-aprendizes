@@ -66,7 +66,16 @@ A partir dela, temos as opções:
 * IntelliJ IDEA
 * BlueJ
 
+## Conclusões:
+- **Guilherme:** Sinceramente, é a primeira vez que é pedido um projeto junto com uma documentação e um modelo, por isso houve algumas dificuldades na minha visão geral, já que era a primeira vez fazendo algo assim. Independente de tudo, posso dizer que aprendi coisas novas, vi coisas que preciso melhorar e espero que no próximo projeto eu possa fazer algo melhor.
+
+- **Gustavo:** É importante frisar que o aprendizado em projetos de pequeno porte é uma excelente maneira de começar aprender a como programar de verdade, e trabalhar em equipe da forma correta. A organização das classes foi algo que me pressionou a encapsular métodos, e diminuir a quantidade de instruções já inseridas em um método maior. A o nível de dificuldade do modelo proposto foi de nível adequado, visto que a implementação do próprio se mostrou fluida e interessante. 
+
+- **Pietro:** Eu e meu grupo sofremos muitos desafios para desenvolver esse pequeno projeto não por sua dificuldade, mas pela necessidade de implementar uma lógica bem fundamentada e por consolidar ideias de todos os integrantes do grupo. Assim, mesmo com os desafios que sofremos, eu acredito que todos nós aprendemos muito, principalmente as dificuldades de trabalho em equipe, então usarei os erros que cometi e os ensinamentos dos meus colegas para desenvolver melhores projetos no futuro.
+
 ## Autores
 * Guilherme Monteiro de Oliveira
 * Gustavo Scaglione Vilmar
 * Pietro Tadeu Vieira Giorgi
+
+#### Para mais informações ou contribuir com o projeto, veja o repositório no github: https://github.com/Pink-Skirts/avaliacao-aprendizes
