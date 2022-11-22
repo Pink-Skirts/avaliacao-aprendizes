@@ -42,7 +42,7 @@ public class Pergunta
         this.pergunta = pergunta;
     }
     public void setResposta(int resposta) throws RespostaInvalidaException{
-        if(resposta > 0 && resposta < 5){ //Intervalo de 1 <= x <= 4
+        if(resposta > 0 && resposta < 6){ //Intervalo de 1 <= x <= 4
             this.resposta = resposta;
         } else {
             throw new RespostaInvalidaException("ID da resposta invalido!");
@@ -60,17 +60,18 @@ public class Pergunta
         return this.resposta;
     }
 
-    public void inserirAlternativas(String alt1, String alt2, String alt3){
+    public void inserirAlternativas(String alt1, String alt2, String alt3, String alt4){
         //2 espaços do armazenador de alternativas são utilizados para "Ajuda" e "Parar"
         alternativas.add(new Alternativa(alt1, 1));
         alternativas.add(new Alternativa(alt2, 2));
         alternativas.add(new Alternativa(alt3, 3));
-        alternativas.add(new Alternativa("Ajuda", 4));
-        alternativas.add(new Alternativa("Parar", 5));
+        alternativas.add(new Alternativa(alt4, 4));
+        alternativas.add(new Alternativa("Ajuda", 5));
+        alternativas.add(new Alternativa("Parar", 6));
     }
 
     public void mostrarAlternativas(){
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < 6; i++){
             System.out.println((i + 1) + " - " + alternativas.get(i).getTextoAlternativa());
         }
     }
