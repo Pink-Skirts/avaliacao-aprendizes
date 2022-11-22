@@ -6,11 +6,18 @@
 
 public class Avaliacao
 {
-    public Avaliacao(){
-
+    public void avaliar1(Turma turma, int indiceAlunoEscolhido){
+       turma.getAprendiz(indiceAlunoEscolhido).setNota(4);
+    }
+    public void avaliar2(Turma turma, int indiceAlunoEscolhido){
+        turma.getAprendiz(indiceAlunoEscolhido).setNota(7);
+    }
+    public void avaliar3(Turma turma, int indiceAlunoEscolhido){
+        turma.getAprendiz(indiceAlunoEscolhido).setNota(10);
+        avaliado(turma, indiceAlunoEscolhido);
     }
 
-    public void avaliar(){
-
+    public void avaliado(Turma turma, int indiceAlunoEscolhido){
+        turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
     }
 }
