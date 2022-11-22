@@ -35,7 +35,7 @@ A interface do projeto é feita pelo Terminal.
 
 ### Menu Inicial:
 
-# insira imagem aqui
+![Menu Inicial](https://raw.githubusercontent.com/Pink-Skirts/avaliacao-aprendizes/screenshots/menu-inicial.png)
 
 A partir dela, temos as opções:
 1. Iniciar rodada - Requere que o usuário selecione uma turma a ser avaliada, e então segue para o menu de rodadas.
@@ -46,7 +46,7 @@ A partir dela, temos as opções:
 
 ### Menu de Opções:
 
-# insira imagem aqui
+![Menu opções](https://raw.githubusercontent.com/Pink-Skirts/avaliacao-aprendizes/screenshots/menu-edicao.png)
 
 1. Remover aluno de uma turma - Remove um aluno de uma turma. Requere que o usuário selecione uma turma, e então, o aluno a ser removido.
 2. Adicionar aluno a uma turma - Adiciona um aluno a uma turma. Requere que o usuário selecione uma turma, e então, o aluno a ser adicionado.
@@ -55,7 +55,11 @@ A partir dela, temos as opções:
 5. Sair - Sair do menu de opções e voltar ao menu inicial.
 
 ## Modelo Conceitual
+### Diagrama de caso:
+![Diagrama de caso](https://raw.githubusercontent.com/Pink-Skirts/avaliacao-aprendizes/screenshots/diagrama-de-caso.png)
 
+### Diagrama de classe:
+![Diagrama de classe](https://raw.githubusercontent.com/Pink-Skirts/avaliacao-aprendizes/screenshots/diagrama-de-classes.png)
 
 ## Técnicas e tecnologias utilizadas
 * Java 18
