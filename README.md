@@ -35,7 +35,7 @@ A interface do projeto é feita pelo Terminal.
 
 ### Menu Inicial:
 
-# insira imagem aqui
+![Menu Inicial](https://raw.githubusercontent.com/Pink-Skirts/avaliacao-aprendizes/screenshots/menu-inicial.png)
 
 A partir dela, temos as opções:
 1. Iniciar rodada - Requere que o usuário selecione uma turma a ser avaliada, e então segue para o menu de rodadas.
@@ -46,7 +46,7 @@ A partir dela, temos as opções:
 
 ### Menu de Opções:
 
-# insira imagem aqui
+![Menu opções](https://raw.githubusercontent.com/Pink-Skirts/avaliacao-aprendizes/screenshots/menu-edicao.png)
 
 1. Remover aluno de uma turma - Remove um aluno de uma turma. Requere que o usuário selecione uma turma, e então, o aluno a ser removido.
 2. Adicionar aluno a uma turma - Adiciona um aluno a uma turma. Requere que o usuário selecione uma turma, e então, o aluno a ser adicionado.
@@ -55,14 +55,27 @@ A partir dela, temos as opções:
 5. Sair - Sair do menu de opções e voltar ao menu inicial.
 
 ## Modelo Conceitual
+### Diagrama de caso:
+![Diagrama de caso](https://raw.githubusercontent.com/Pink-Skirts/avaliacao-aprendizes/screenshots/diagrama-de-caso.png)
 
+### Diagrama de classe:
+![Diagrama de classe](https://raw.githubusercontent.com/Pink-Skirts/avaliacao-aprendizes/screenshots/diagrama-de-classes.png)
 
 ## Técnicas e tecnologias utilizadas
 * Java 18
 * IntelliJ IDEA
 * BlueJ
 
+## Conclusões:
+- **Guilherme:** Sinceramente, é a primeira vez que é pedido um projeto junto com uma documentação e um modelo, por isso houve algumas dificuldades na minha visão geral, já que era a primeira vez fazendo algo assim. Independente de tudo, posso dizer que aprendi coisas novas, vi coisas que preciso melhorar e espero que no próximo projeto eu possa fazer algo melhor.
+
+- **Gustavo:** É importante frisar que o aprendizado em projetos de pequeno porte é uma excelente maneira de começar aprender a como programar de verdade, e trabalhar em equipe da forma correta. A organização das classes foi algo que me pressionou a encapsular métodos, e diminuir a quantidade de instruções já inseridas em um método maior. A o nível de dificuldade do modelo proposto foi de nível adequado, visto que a implementação do próprio se mostrou fluida e interessante. 
+
+- **Pietro:** Eu e meu grupo sofremos muitos desafios para desenvolver esse pequeno projeto não por sua dificuldade, mas pela necessidade de implementar uma lógica bem fundamentada e por consolidar ideias de todos os integrantes do grupo. Assim, mesmo com os desafios que sofremos, eu acredito que todos nós aprendemos muito, principalmente as dificuldades de trabalho em equipe, então usarei os erros que cometi e os ensinamentos dos meus colegas para desenvolver melhores projetos no futuro.
+
 ## Autores
 * Guilherme Monteiro de Oliveira
 * Gustavo Scaglione Vilmar
 * Pietro Tadeu Vieira Giorgi
+
+#### Para mais informações ou contribuir com o projeto, veja o repositório no github: https://github.com/Pink-Skirts/avaliacao-aprendizes
