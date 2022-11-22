@@ -147,6 +147,9 @@ public class Rodada {
                                 }
                             } else if (x == 6) {
                                 Parada parada = new Parada(turma, indiceAlunoEscolhido, getContRodada());
+                                if(getRodadaAjuda()){
+                                    setRodadaAjuda(false);
+                                }
                                 parar = parada.pararRodada();
                                 parada.contabilizarPontos();
                                 turma.getAprendiz(indiceAlunoEscolhido).setAvaliado(true);
