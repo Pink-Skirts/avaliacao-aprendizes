@@ -1,10 +1,10 @@
-import java.util.Random;
-
-/*  title:
+/*  title: Sorteio.java
  *  subtitle: Laboratorio de Modelagem (LMA)
  *  author: GM de Oliveira, GS Vilmar, PTV Giorgi
  *  date: 18/10/2022
  */
+
+import java.util.Random;
 
 public class Sorteio
 {
