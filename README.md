@@ -28,7 +28,7 @@ Ao ser finalizada, uma opção de iniciar outra rodada é apresentada, e outro a
 à resolução das perguntas.
 
 ## Ajuda
-Em uma ajuda, o aluno que for sorteado para ajudar o colega que o solicitou, é o responsável por resolver a questão. Caso a erre, ambos os alunos ficarão com 4  de pontuação.
+Em uma ajuda, o aluno que for sorteado para ajudar o colega que o solicitou, é o responsável por resolver a questão. Caso a erre, ambos os alunos ficarão com a nota já acumulada da rodada, seja tal determinada pelo primeiro aluno.
 
 ## Interface
 A interface do projeto é feita pelo Terminal. 
